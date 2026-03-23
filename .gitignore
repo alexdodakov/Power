@@ -1,0 +1,34 @@
+# Build artifacts
+**/bin/
+**/obj/
+
+# User/local IDE files
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider / ReSharper
+.idea/
+*.DotSettings.user
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Test / coverage
+TestResults/
+*.coverage
+*.coveragexml
+coverage/
+
+# NuGet local cache output
+*.nupkg
+packages/

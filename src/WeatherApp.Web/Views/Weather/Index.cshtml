@@ -1,0 +1,70 @@
+﻿@{
+    ViewData["Title"] = "Погода";
+}
+
+<main class="page weather-page" data-weather-url='@Url.Action("Report", "Weather")'>
+    <div class="weather-status" data-status role="status" aria-live="polite">
+        <span data-status-text>Готовим свежий прогноз...</span>
+    </div>
+
+    <div class="weather-loading is-hidden" data-loading role="status" aria-live="polite">
+        <span class="spinner" aria-hidden="true"></span>
+        <span data-loading-text>Загружаем прогноз...</span>
+    </div>
+
+    <div class="weather-error is-hidden" data-error role="alert">
+        <p data-error-message>Не удалось загрузить прогноз.</p>
+        <button type="button" data-retry class="retry-button">Повторить запрос</button>
+    </div>
+
+    <section class="hero-card">
+        <div class="hero-copy">
+            <div class="hero-topline">
+                <span class="city" data-city-name>Москва</span>
+            </div>
+            <div class="hero-main">
+                <div>
+                    <p class="eyebrow">Сейчас</p>
+                    <h1 data-temperature>+0°</h1>
+                    <p class="condition" data-condition-text>Загружаем...</p>
+                    <p class="feels-text" data-feels-like>Ощущается как …</p>
+                </div>
+                <div class="weather-glyph" aria-hidden="true">
+                    <img class="current-weather-icon is-hidden" data-current-icon alt="" />
+                </div>
+            </div>
+            <dl class="metrics">
+                <div>
+                    <dt>Ветер</dt>
+                    <dd data-wind>—</dd>
+                </div>
+                <div>
+                    <dt>Влажность</dt>
+                    <dd data-humidity>—</dd>
+                </div>
+                <div>
+                    <dt>Давление</dt>
+                    <dd data-pressure>—</dd>
+                </div>
+            </dl>
+        </div>
+    </section>
+
+    <section class="section-block">
+        <div class="section-heading">
+            <h2>Почасовой прогноз</h2>
+            <span>Оставшиеся часы сегодня и полный завтрашний день</span>
+        </div>
+        <div class="hourly-strip" data-hourly aria-live="polite"></div>`r`n    </section>
+
+    <section class="section-block">
+        <div class="section-heading">
+            <h2>Прогноз на 3 дня</h2>
+        </div>
+        <div class="forecast-list" data-daily aria-live="polite"></div>
+    </section>
+</main>
+
+
+
+
